@@ -1,0 +1,39 @@
+<mvc:View 
+	controllerName="com.cgi.workshop.fiori.controller.Master" 
+	xmlns="sap.m" 
+	xmlns:mvc="sap.ui.core.mvc"
+	height="100%">
+	<Page id="customersPage" title="{i18n>appDescription}">
+		<content>
+			<List id="customerList" items="{/Customers}" mode="SingleSelect">
+				<StandardListItem 
+					id="customersListItem" 
+					title="{CompanyName}" 
+					description="{CustomerID}"/>
+			</List>
+		</content>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button
+					id="displayButton"
+					type="Emphasized"
+					icon="sap-icon://display"
+					tooltip="{i18n>display}"
+					press=".onDisplay"/>
+				<Button
+					id="refreshButton"
+					type="Emphasized"
+					icon="sap-icon://refresh"
+					tooltip="{i18n>refresh}"
+					press=".onRefresh"/>
+				<Button
+					id="deleteButton"
+					type="Reject"
+					icon="sap-icon://delete"
+					tooltip="{i18n>delete}"
+					press=".onDelete"/>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

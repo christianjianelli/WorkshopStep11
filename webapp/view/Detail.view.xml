@@ -1,0 +1,21 @@
+<mvc:View 
+	controllerName="com.cgi.workshop.fiori.controller.Detail" 
+	xmlns="sap.m" 
+	xmlns:mvc="sap.ui.core.mvc">
+	<Page id="customerPage" title="{i18n>detailViewTitle}" showNavButton="true" navButtonPress=".onNavBack">
+		<ObjectHeader 
+			icon="http://i.pravatar.cc/300"
+			imageShape="Circle"
+			responsive="true"
+			title="{CompanyName}">
+			<attributes>
+				<ObjectAttribute title="Contact Name" text="{ContactName}"/>
+				<ObjectAttribute title="Contact Title" text="{ContactTitle}"/>
+				<ObjectAttribute title="Customer ID" text="{CustomerID}"/>
+				<ObjectAttribute title="Country" text="{Country}"/>
+				<ObjectAttribute title="City" text="{City}"/>
+				<ObjectAttribute title="Phone" text="{Phone}"/>
+			</attributes>
+		</ObjectHeader>
+	</Page>
+</mvc:View>

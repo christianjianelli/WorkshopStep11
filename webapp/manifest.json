@@ -1,0 +1,92 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"_version": "1.3.0",
+		"id": "com.cgi.workshop.fiori",
+		"type": "application",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"dataSources": {
+			"mainService": {
+				"uri": "/destinations/northwind/V2/Northwind/Northwind.svc/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"_version": "1.3.0",
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_belize"
+		]
+	},
+	"sap.ui5": {
+		"_version": "1.2.0",
+		"rootView": {
+			"viewName": "com.cgi.workshop.fiori.view.App",
+			"type": "XML",
+			"async": true,
+			"id": "main"
+		},
+		"dependencies": {
+			"minUI5Version": "1.60",
+			"libs": {
+				"sap.m": {}
+			}
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "com.cgi.workshop.fiori.i18n.i18n"
+				}
+			},
+			"": {
+				"dataSource": "mainService"
+			}
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "com.cgi.workshop.fiori.view",
+				"controlId": "workshopFioriApp",
+				"controlAggregation": "pages",
+				"async": true
+			},
+			"routes": [{
+				"pattern": "",
+				"name": "master",
+				"target": "master"
+			}, {
+				"pattern": "detail/{objectKey}",
+				"name": "detail",
+				"target": "detail"
+			}],
+			"targets": {
+				"master": {
+					"viewId": "app",
+					"viewName": "Master"
+				},
+				"detail": {
+					"viewId": "detail",
+					"viewName": "Detail"
+				}
+			}
+		},
+		"contentDensities": {
+			"cozy": true,
+			"compact": false
+		}
+	}
+}
