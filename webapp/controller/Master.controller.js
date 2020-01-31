@@ -43,7 +43,11 @@ sap.ui.define([
 				
 				//MessageToast.show(oBundle.getText("refreshConfirmed"));
 				
-				this.getView().getModel().refresh();
+				//this.getView().getModel().refresh();
+				
+				var oView = this.getView();
+				var oModel = oView.getModel();
+				oModel.refresh();
 				
 			}
 

@@ -52,7 +52,8 @@
 				}
 			},
 			"": {
-				"dataSource": "mainService"
+				"dataSource": "mainService",
+				"preload": true
 			}
 		},
 		"routing": {
